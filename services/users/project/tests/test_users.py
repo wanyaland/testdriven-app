@@ -165,20 +165,14 @@ class TestUserService(BaseTestCase):
               '/',
               data=dict(username='michael', email='michael@sonotreal.com'),
               follow_redirects=True
-            )
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b'All Users', response.data)
-            self.assertNotIn(b'<p>No users!</p>', response.data)
-            self.assertIn(b'michael', response.data)
+              )
+              self.assertEqual(response.status_code, 200)
+              self.assertIn(b'All Users', response.data)
+              self.assertNotIn(b'<p>No users!</p>', response.data)
+              self.assertIn(b'michael', response.data)
 
 
     
             
-    
-        
-    
-
-
-
 if __name__ == '__main__':
     unittest.main()

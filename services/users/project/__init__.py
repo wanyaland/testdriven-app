@@ -1,10 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask
 import os
 from flask_sqlalchemy import SQLAlchemy
 
-
 db = SQLAlchemy() 
-
 
 def create_app(script_info=None):
 
