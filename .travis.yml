@@ -2,10 +2,8 @@ sudo: required
 
 services:
   - docker
-
   env:
-    DOCKER_COMPOSE_VERSION: 1.21.1
-  
+    DOCKER_COMPOSE_VERSION: 1.23.2
   before_install:
     - sudo rm /usr/local/bin/docker-compose
     - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -18,4 +16,4 @@ services:
     - docker-compose -f docker-compose-dev.yml run users python manage.py flake8 project
   after_script:
     - docker-compose -f docker-compose-dev.yml down
-    
+
